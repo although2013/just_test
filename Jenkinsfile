@@ -10,5 +10,6 @@ pipeline {
                 sh "docker build -t just_test/v${env.BUILD_ID} . "
             }
         }
+        
     }
 }
