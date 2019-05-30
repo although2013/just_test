@@ -2,8 +2,8 @@ require 'sinatra'
 
 set :bind, '0.0.0.0'
 
-str = File.read("README.md")
+str = File.read('README.md')
 
-get "/" do
+get '/' do
   "hello: #{str}"
 end
