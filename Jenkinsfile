@@ -10,6 +10,11 @@ pipeline {
                 sh "docker build -t just_test/v${env.BUILD_ID} . "
             }
         }
-        
+        stage('post') {
+            steps {
+                sh 'docker stop $(docker ps -a -q --filter="name=justtest")'
+                sh "docker run -p 4567:4567 --rm --name=justtest -d just_test/v${env.BUILD_ID}"
+            }
+        }
     }
 }
