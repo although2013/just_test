@@ -6,7 +6,9 @@ WORKDIR /usr/src/app
 
 RUN git clone --depth=1 https://github.com/although2013/just_test
 
-RUN cd just_test
+WORKDIR just_test
+
+RUN ls
 
 RUN gem install sinatra
 
