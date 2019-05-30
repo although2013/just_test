@@ -4,9 +4,9 @@ FROM ruby
 # Set the working directory to /app
 WORKDIR /usr/src/app
 
-RUN git clone --depth=1 https://github.com/although2013/just_test
+COPY . .
 
-WORKDIR just_test
+# WORKDIR just_test
 
 RUN gem install sinatra
 
